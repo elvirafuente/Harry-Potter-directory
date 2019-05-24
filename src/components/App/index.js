@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import './styles.css';
-// import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import MainPage from '../MainPage'
 
 class App extends Component {
@@ -57,11 +57,22 @@ class App extends Component {
         <header className="page__header">
           <h1>Harry Potter's Directory</h1>
         </header>
-        <MainPage
-          fetchData={this.state.fetchData}
-          handleInputName={this.handleInputName} 
-          inputNameValue={this.state.filters.byName}
-        />
+        <Switch >
+          <Route
+            exact path="/"
+            render={() => {
+              return (
+                <MainPage
+                  fetchData={this.state.fetchData}
+                  handleInputName={this.handleInputName}
+                  inputNameValue={this.state.filters.byName}
+                />
+              )}
+            }
+
+          />
+          <Route path="/Character/:id" />
+        </Switch>
       </Fragment >
     )
   }

@@ -41,7 +41,7 @@ class App extends Component {
         <header className="page__header">
           <h1>Harry Potter's Directory</h1>
         </header>
-        <MainPage />
+        <MainPage fetchData={this.state.fetchData}/>
       </Fragment >
     )
   }

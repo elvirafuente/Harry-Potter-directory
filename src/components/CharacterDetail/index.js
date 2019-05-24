@@ -15,6 +15,8 @@ class CharacterDetail extends React.Component{
         <h2>{character.name}</h2>
         <p>{character.house}</p>
         <p>{character.yearOfBirth}</p>
+        <i className={`fas ${character.alive ? 'fa-heartbeat' : 'fa-heart-broken'}`}></i>
+        
       </div>
     );
   }

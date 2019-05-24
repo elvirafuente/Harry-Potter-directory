@@ -1,12 +1,22 @@
-import React from 'react';
-import './App.css';
+import React, {Component, Fragment} from 'react';
+import './styles.css';
+import PropTypes from 'prop-types';
 
-function App() {
-  return (
-    <div className="App">
-      hola mundo
-    </div>
-  );
+class CharacterCard extends Component{
+  render(){
+    const {characterInfo} = this.props;
+    return (
+      <Fragment >
+        <h3>{characterInfo.name}</h3>
+        <img src={characterInfo.image} alt={characterInfo.name}/>
+        <p>{characterInfo.house}</p>
+      </Fragment>
+    )
+  }
 }
 
-export default App;
+CharacterCard.propTypes = {
+  characterInfo: PropTypes.object.isRequired,
+}
+
+export default CharacterCard;

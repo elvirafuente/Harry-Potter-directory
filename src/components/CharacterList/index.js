@@ -1,4 +1,5 @@
 import React, {Fragment, Component} from 'react';
+import CharacterCard from '../CharacterCard'
 import PropTypes from 'prop-types';
 import './styles.css';
 
@@ -11,9 +12,10 @@ class CharacterList extends Component {
         {fetchData.map(item => {
           return (
             <li key={item.id}>
-              <h3>{item.name}</h3>
+              {/* <h3>{item.name}</h3>
               <img src={item.image} alt={item.name}/>
-              <p>{item.house}</p>
+              <p>{item.house}</p> */}
+              <CharacterCard characterInfo={item} />
             </li>
           )
         })}

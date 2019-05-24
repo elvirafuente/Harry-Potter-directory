@@ -1,20 +1,19 @@
-import React, {Fragment, Component} from 'react';
+import React, { Fragment, Component } from 'react';
 import CharacterCard from '../CharacterCard'
 import PropTypes from 'prop-types';
 import './styles.css';
 
 class CharacterList extends Component {
   render() {
-    const { fetchData } = this.props
+    const { fetchData, inputNameValue} = this.props
     return (
       <Fragment >
         <h2>Character Results</h2>
-        {fetchData.map(item => {
+        {fetchData 
+          .filter( item => item.name.includes(inputNameValue))
+          .map(item => {
           return (
             <li key={item.id}>
-              {/* <h3>{item.name}</h3>
-              <img src={item.image} alt={item.name}/>
-              <p>{item.house}</p> */}
               <CharacterCard characterInfo={item} />
             </li>
           )

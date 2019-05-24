@@ -5,10 +5,14 @@ import MainPage from '../MainPage'
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       fetchData: [],
-    }
+      filters: {
+        byName: '',
+      }
+    };
+    this.handleInputName = this.handleInputName.bind(this);
   }
 
   componentDidMount() {
@@ -29,10 +33,22 @@ class App extends Component {
             }
           })
           this.setState({
-            fetchData:fetchData,
+            fetchData: fetchData,
           })
         })
     )
+  }
+
+  handleInputName(event) {
+    const { value } = event.target;
+    this.setState(prevState => {
+      return {
+        filters: {
+          ...prevState.filters,
+          byName: value,
+        }
+      }
+    })
   }
 
   render() {
@@ -41,7 +57,11 @@ class App extends Component {
         <header className="page__header">
           <h1>Harry Potter's Directory</h1>
         </header>
-        <MainPage fetchData={this.state.fetchData}/>
+        <MainPage
+          fetchData={this.state.fetchData}
+          handleInputName={this.handleInputName} 
+          inputNameValue={this.state.filters.byName}
+        />
       </Fragment >
     )
   }

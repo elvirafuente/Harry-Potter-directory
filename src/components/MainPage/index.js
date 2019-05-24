@@ -9,10 +9,15 @@ class MainPage extends React.Component {
     return (
       <main>
         <nav>
-          <Filters />
+          <Filters 
+            handleInputName={this.props.handleInputName}
+          />
         </nav>
         <section>
-          <CharacterList fetchData={this.props.fetchData}/>
+          <CharacterList 
+            fetchData={this.props.fetchData} 
+            inputNameValue={this.props.inputNameValue}
+          />
         </section>
       </main>
       
@@ -22,6 +27,8 @@ class MainPage extends React.Component {
 
 MainPage.propTypes = {
   fetchData: PropTypes.array.isRequired,
+  handleInputName: PropTypes.func.isRequired,
+  inputNameValue: PropTypes.string.isRequired,
 }
 
 export default MainPage;

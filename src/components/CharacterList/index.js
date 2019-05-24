@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import CharacterCard from '../CharacterCard'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.css';
 
@@ -14,7 +15,9 @@ class CharacterList extends Component {
           .map(item => {
           return (
             <li key={item.id}>
-              <CharacterCard characterInfo={item} />
+              <Link to={`/character/${item.id}`}>
+                <CharacterCard characterInfo={item} />
+              </Link>
             </li>
           )
         })}

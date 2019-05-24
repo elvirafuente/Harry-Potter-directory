@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react';
 import './styles.css';
 import { Route, Switch } from 'react-router-dom';
 import MainPage from '../MainPage'
+import CharacterDetail from '../CharacterDetail'
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class App extends Component {
       fetchData: [],
       filters: {
         byName: '',
-      }
+      },
+      isFetching: true,
     };
     this.handleInputName = this.handleInputName.bind(this);
   }
@@ -29,11 +31,12 @@ class App extends Component {
           const fetchData = data.map((item, index) => {
             return {
               ...item,
-              id: index,
+              id: index + 1,
             }
           })
           this.setState({
             fetchData: fetchData,
+            isFetching: false,
           })
         })
     )
@@ -57,22 +60,36 @@ class App extends Component {
         <header className="page__header">
           <h1>Harry Potter's Directory</h1>
         </header>
-        <Switch >
-          <Route
-            exact path="/"
-            render={() => {
-              return (
-                <MainPage
-                  fetchData={this.state.fetchData}
-                  handleInputName={this.handleInputName}
-                  inputNameValue={this.state.filters.byName}
-                />
-              )}
-            }
+        {this.state.isFetching
+          ? <p>Loading...</p>
+          : <Switch >
+            <Route
+              exact path="/"
+              render={() => {
+                return (
+                  <MainPage
+                    fetchData={this.state.fetchData}
+                    handleInputName={this.handleInputName}
+                    inputNameValue={this.state.filters.byName}
+                  />
+                )
+              }
+              }
 
-          />
-          <Route path="/Character/:id" />
-        </Switch>
+            />
+            <Route
+              path="/character/:id"
+              render={(routerProps) => {
+                return (
+                  <CharacterDetail
+                    match={routerProps.match.params.id}
+                    usersInfo={this.state.fetchData}
+                  />
+                )
+              }}
+            />
+          </Switch>
+        }
       </Fragment >
     )
   }

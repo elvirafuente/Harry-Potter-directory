@@ -2,7 +2,9 @@ import React, { Fragment, Component } from 'react';
 import './styles.css';
 import { Route, Switch } from 'react-router-dom';
 import MainPage from '../MainPage'
-import CharacterDetail from '../CharacterDetail'
+import CharacterDetail from '../CharacterDetail';
+import Footer from '../Footer';
+
 
 class App extends Component {
   constructor(props) {
@@ -95,6 +97,7 @@ class App extends Component {
             />
           </Switch>
         }
+        <Footer />
       </Fragment >
     )
   }

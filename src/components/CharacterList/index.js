@@ -11,7 +11,7 @@ class CharacterList extends Component {
       <Fragment >
         <h2>Character Results</h2>
         {fetchData 
-          .filter( item => item.name.includes(inputNameValue))
+          .filter( item => item.name.toLowerCase().includes(inputNameValue.toLowerCase()))
           .map(item => {
           return (
             <li key={item.id}>

@@ -6,7 +6,9 @@ import MainPage from '../MainPage'
 class App extends Component {
   constructor(props) {
     super(props)
-
+    this.state = {
+      fetchData: [],
+    }
   }
 
   componentDidMount() {
@@ -20,7 +22,15 @@ class App extends Component {
       fetch(url)
         .then(response => response.json())
         .then(data => {
-          console.log(data);
+          const fetchData = data.map((item, index) => {
+            return {
+              ...item,
+              id: index,
+            }
+          })
+          this.setState({
+            fetchData:fetchData,
+          })
         })
     )
   }

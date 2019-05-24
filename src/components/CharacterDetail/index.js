@@ -4,14 +4,17 @@ import { Link } from 'react-router-dom';
 
 class CharacterDetail extends React.Component{
   render(){
-    const user = this.props.usersInfo[this.props.match-1]
-    
+    const { character } = this.props;
+    console.log(character);    
     return (
       <div className="App">
         <Link to="/">
           Back
         </Link>
-        {user.name}
+        <img src={character.image} alt={character.name}/>
+        <h2>{character.name}</h2>
+        <p>{character.house}</p>
+        <p>{character.yearOfBirth}</p>
       </div>
     );
   }

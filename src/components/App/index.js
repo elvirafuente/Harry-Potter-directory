@@ -54,6 +54,10 @@ class App extends Component {
     })
   }
 
+  getCharacter(detailId){
+     return this.state.fetchData.find(item => item.id === parseInt(detailId)      )
+  }
+
   render() {
     return (
       <Fragment >
@@ -80,10 +84,11 @@ class App extends Component {
             <Route
               path="/character/:id"
               render={(routerProps) => {
+                const routerId = routerProps.match.params.id;
                 return (
                   <CharacterDetail
-                    match={routerProps.match.params.id}
-                    usersInfo={this.state.fetchData}
+                    match={routerId}
+                    character={this.getCharacter(routerId)}
                   />
                 )
               }}

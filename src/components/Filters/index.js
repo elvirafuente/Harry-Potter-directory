@@ -1,16 +1,17 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import './styles.css';
+import './styles.scss';
 
 class Filters extends Component {
   render() {
     return (
       <Fragment >
-        <form>
-          <label htmlFor="input-name">
+        <form className="page__filters">
+          <label htmlFor="input-name" className="filters__label">
             Busca a tu personaje favorito
-            <input type="text" id="input-name" name="input-name" onChange={this.props.handleInputName}/>
           </label>
+          <input type="text" className="filters__input" id="input-name" name="input-name" onChange={this.props.handleInputName}/>
+
         </form>
       </Fragment>
     )

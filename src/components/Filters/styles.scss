@@ -1,0 +1,19 @@
+.page__filters {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filters__input {
+    height: 30px;
+    border: 4px solid #ccf8fa;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.filters__label {
+    font-size: 20px;
+    margin: 5px;
+}

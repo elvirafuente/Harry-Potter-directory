@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import MainPage from '../MainPage'
 import CharacterDetail from '../CharacterDetail';
 import Footer from '../Footer';
+import Header from '../Header';
 
 
 class App extends Component {
@@ -63,9 +64,7 @@ class App extends Component {
   render() {
     return (
       <Fragment >
-        <header className="page__header">
-          <h1>Harry Potter's Directory</h1>
-        </header>
+        <Header />
         {this.state.isFetching
           ? <p>Loading...</p>
           : <Switch >

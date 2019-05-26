@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import CharacterCard from '../CharacterCard'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './styles.css';
+import './styles.scss';
 
 class CharacterList extends Component {
   render() {
@@ -10,6 +10,7 @@ class CharacterList extends Component {
     return (
       <Fragment >
         <h2>Character Results</h2>
+        <ul className="main__list">
         {fetchData 
           .filter( item => item.name.toLowerCase().includes(inputNameValue.toLowerCase()))
           .map(item => {
@@ -21,6 +22,7 @@ class CharacterList extends Component {
             </li>
           )
         })}
+        </ul>
       </Fragment>
     )
   }

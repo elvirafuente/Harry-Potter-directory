@@ -1,0 +1,17 @@
+.page__header {
+    height: 450px;
+    background-image: url('../../images/background-castle.jpg');
+    background-position: top;
+    background-size: cover;
+    text-align: center;
+}
+
+.header__image {
+    height: 350px;
+}
+
+.header__title {
+    font-size: 42px;
+    color: #d1f0e9;
+    -webkit-text-stroke: 2px black;
+}

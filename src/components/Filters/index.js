@@ -10,7 +10,7 @@ class Filters extends Component {
           <label htmlFor="input-name" className="filters__label">
             Search for your favorite character
           </label>
-          <input type="text" className="filters__input" id="input-name" name="input-name" onChange={this.props.handleInputName}/>
+          <input type="text" className="filters__input" id="input-name" name="input-name" onChange={this.props.handleInputName} value={this.props.inputNameValue}/>
         </form>
       </Fragment>
     )

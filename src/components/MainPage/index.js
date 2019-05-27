@@ -11,6 +11,7 @@ class MainPage extends React.Component {
         <nav>
           <Filters 
             handleInputName={this.props.handleInputName}
+            inputNameValue={this.props.inputNameValue}
           />
         </nav>
         <section>

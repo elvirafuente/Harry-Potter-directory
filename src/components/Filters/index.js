@@ -8,10 +8,9 @@ class Filters extends Component {
       <Fragment >
         <form className="page__filters">
           <label htmlFor="input-name" className="filters__label">
-            Busca a tu personaje favorito
+            Search for your favorite character
           </label>
           <input type="text" className="filters__input" id="input-name" name="input-name" onChange={this.props.handleInputName}/>
-
         </form>
       </Fragment>
     )

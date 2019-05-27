@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class CharacterDetail extends React.Component {
   render() {
@@ -26,6 +27,11 @@ class CharacterDetail extends React.Component {
       </div>
     );
   }
+}
+
+CharacterDetail.propTypes = {
+  character: PropTypes.object.isRequired,
+  match: PropTypes.string.isRequired,
 }
 
 export default CharacterDetail;

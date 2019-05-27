@@ -29,6 +29,7 @@ class CharacterList extends Component {
 
 CharacterList.propTypes = {
   fetchData: PropTypes.array.isRequired,
+  inputNameValue: PropTypes.string.isRequired,
 }
 
 export default CharacterList;

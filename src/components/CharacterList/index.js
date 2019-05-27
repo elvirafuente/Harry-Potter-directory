@@ -6,12 +6,23 @@ import './styles.scss';
 
 class CharacterList extends Component {
   render() {
-    const { fetchData, inputNameValue} = this.props
+    const { fetchData, inputNameValue, inputHouses, inputLifeStatus} = this.props
     return (
       <Fragment >
         <ul className="main__list">
         {fetchData 
           .filter( item => item.name.toLowerCase().includes(inputNameValue.toLowerCase()))
+          .filter(item => inputHouses.length===0 || inputHouses.includes(item.house.toLowerCase()))
+          .filter(item => {
+            if(inputLifeStatus === 'Death'){
+              return item.alive === false
+            } else if(inputLifeStatus === 'Alive'){
+              return item.alive === true;
+            } else {
+              return true;
+            }
+          })
+            
           .map(item => {
           return (
             <li key={item.id} className="card__container">

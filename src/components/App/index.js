@@ -15,11 +15,13 @@ class App extends Component {
       filters: {
         byName: '',
         houses: [],
+        lifeStatus: '',
       },
       isFetching: true,
     };
     this.handleInputName = this.handleInputName.bind(this);
     this.handleInputHouses = this.handleInputHouses.bind(this);
+    this.handleInputLifeStatus = this.handleInputLifeStatus.bind(this);
   }
 
   componentDidMount() {
@@ -59,18 +61,36 @@ class App extends Component {
     })
   }
 
-  handleInputHouses(event){
-    const { value } = event.target;
-    this.setState({
-      filters:{
-        ...this.state.filters,
-        houses: value
+  handleInputHouses(event) {
+    const { value, checked } = event.target;
+    console.log(checked)
+    this.setState(prevState => {
+      return {
+        filters: {
+          ...prevState.filters,
+
+          houses: checked
+            ? prevState.filters.houses.concat(value)
+            : prevState.filters.houses.filter(item => item !== value),
+        }
       }
     })
   }
 
-  getCharacter(detailId){
-     return this.state.fetchData.find(item => item.id === parseInt(detailId))
+  handleInputLifeStatus(event){
+    const { value } = event.target;
+    this.setState(prevState => {
+      return {
+        filters : {
+          ...prevState.filters,
+          lifeStatus: value,
+        }
+      }
+    })
+  }
+
+  getCharacter(detailId) {
+    return this.state.fetchData.find(item => item.id === parseInt(detailId))
   }
 
   render() {
@@ -89,6 +109,9 @@ class App extends Component {
                     handleInputName={this.handleInputName}
                     inputNameValue={this.state.filters.byName}
                     handleInputHouses={this.handleInputHouses}
+                    inputHouses={this.state.filters.houses}
+                    handleInputLifeStatus={this.handleInputLifeStatus}
+                    inputLifeStatus={this.state.filters.lifeStatus}
                   />
                 )
               }

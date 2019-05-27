@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import './styles.css';
+import './styles.scss';
 import PropTypes from 'prop-types';
 
 class CharacterCard extends Component{
@@ -7,10 +7,13 @@ class CharacterCard extends Component{
     const {characterInfo} = this.props;
     return (
       <Fragment >
+        
+        <div className="card-image__container">
+          <img className="card__image" src={characterInfo.image} alt={characterInfo.name}/>
+        </div>
         <h3>{characterInfo.name}</h3>
-        <img src={characterInfo.image} alt={characterInfo.name}/>
         <p>{characterInfo.house}</p>
-      </Fragment>
+        </Fragment>
     )
   }
 }

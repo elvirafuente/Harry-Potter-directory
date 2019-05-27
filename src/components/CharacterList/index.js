@@ -9,14 +9,13 @@ class CharacterList extends Component {
     const { fetchData, inputNameValue} = this.props
     return (
       <Fragment >
-        <h2>Character Results</h2>
         <ul className="main__list">
         {fetchData 
           .filter( item => item.name.toLowerCase().includes(inputNameValue.toLowerCase()))
           .map(item => {
           return (
-            <li key={item.id}>
-              <Link to={`/character/${item.id}`}>
+            <li key={item.id} className="card__container">
+              <Link to={`/character/${item.id}`} className="card__link">
                 <CharacterCard characterInfo={item} />
               </Link>
             </li>

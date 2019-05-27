@@ -1,5 +1,26 @@
 .main__list {
-    width: 600px;
+    width: 1200px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 50px;
+    margin: auto;
+}
+
+.card__container {
+    width: 180px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    background-color:   #97cee4;
+    border: 2px solid #afdeeb;
+    &:hover{
+        background-color:   #63a9c5; 
+    }
+}
+
+.card__link{
+    text-decoration: none;
+    color: white;
 }

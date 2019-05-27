@@ -1,22 +1,28 @@
 import React from 'react';
-import './styles.css';
+import './styles.scss';
 import { Link } from 'react-router-dom';
 
-class CharacterDetail extends React.Component{
-  render(){
+class CharacterDetail extends React.Component {
+  render() {
     const { character } = this.props;
-    console.log(character);    
+    console.log(character);
     return (
-      <div className="App">
+      <div className="main__character-detail">
+        <div className="card--detail">
+          <div className="image__container">
+            <img src={character.image} alt={character.name} className="character-detail__image"/>
+          </div>
+          <div className="character-detail__info">
+            <h2 className="info__title">{character.name}</h2>
+            <p className="info info__house">House: {character.house}</p>
+            <p className="info info__birth">Year of birth: {character.yearOfBirth}</p>
+            <p className="info info__state">State: </p>
+            <i className={`info info__icon fas ${character.alive ? 'fa-heart' : 'fa-skull'}`}></i>
+          </div>
+        </div>
         <Link to="/">
-          Back
+            Back
         </Link>
-        <img src={character.image} alt={character.name}/>
-        <h2>{character.name}</h2>
-        <p>{character.house}</p>
-        <p>{character.yearOfBirth}</p>
-        <i className={`fas ${character.alive ? 'fa-heartbeat' : 'fa-heart-broken'}`}></i>
-        
       </div>
     );
   }

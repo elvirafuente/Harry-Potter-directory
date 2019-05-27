@@ -9,6 +9,7 @@
     color: #2a91cc;
     height: 50px;
     font-size: 12px;
+    flex-grow: 0;
     @media all and (min-width:768px){
         font-size: 18px;    
     }

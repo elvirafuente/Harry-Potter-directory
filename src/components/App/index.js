@@ -58,7 +58,7 @@ class App extends Component {
   }
 
   getCharacter(detailId){
-     return this.state.fetchData.find(item => item.id === parseInt(detailId)      )
+     return this.state.fetchData.find(item => item.id === parseInt(detailId))
   }
 
   render() {

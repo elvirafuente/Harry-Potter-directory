@@ -11,8 +11,8 @@ class CharacterCard extends Component{
         <div className="card-image__container">
           <img className="card__image" src={characterInfo.image} alt={characterInfo.name}/>
         </div>
-        <h3>{characterInfo.name}</h3>
-        <p>{characterInfo.house}</p>
+        <h3 className="card__title">{characterInfo.name}</h3>
+        <p className="card__info">{characterInfo.house}</p>
         </Fragment>
     )
   }

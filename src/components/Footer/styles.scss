@@ -1,5 +1,4 @@
 .page__footer{
-    height: 50px;
     background-color: #d2eaf8;
     position: relative;
     bottom: 0;
@@ -8,6 +7,11 @@
     align-items: center;
     justify-content: center;
     color: #2a91cc;
+    height: 50px;
+    font-size: 12px;
+    @media all and (min-width:768px){
+        font-size: 18px;    
+    }
 }
 
 .footer__link{

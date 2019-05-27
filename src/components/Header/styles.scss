@@ -1,19 +1,28 @@
 .page__header {
-    height: 450px;
+    width: 100vw;
+    height: 200px;
     background-image: url('../../images/background-castle.jpg');
     background-position: top;
     background-size: cover;
     text-align: center;
+    @media all and (min-width:768px){
+        height: 450px;
+    }
 }
 
 .header__image {
-    height: 350px;
+    height: 150px;
+    @media all and (min-width:768px){
+        height: 350px;
+    }
 }
 
 .header__title {
-    font-size: 34px;
+    font-size: 18px;
     color: rgb(5, 62, 77);
-    background-color: rgba(209, 240, 233, 0.8)
-    
-
+    background-color: rgba(209, 240, 233, 0.6);
+    padding: 5px;
+    @media all and (min-width:768px){
+        font-size: 34px;
+    }
 }

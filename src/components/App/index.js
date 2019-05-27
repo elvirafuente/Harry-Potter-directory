@@ -14,10 +14,12 @@ class App extends Component {
       fetchData: [],
       filters: {
         byName: '',
+        houses: [],
       },
       isFetching: true,
     };
     this.handleInputName = this.handleInputName.bind(this);
+    this.handleInputHouses = this.handleInputHouses.bind(this);
   }
 
   componentDidMount() {
@@ -57,6 +59,16 @@ class App extends Component {
     })
   }
 
+  handleInputHouses(event){
+    const { value } = event.target;
+    this.setState({
+      filters:{
+        ...this.state.filters,
+        houses: value
+      }
+    })
+  }
+
   getCharacter(detailId){
      return this.state.fetchData.find(item => item.id === parseInt(detailId))
   }
@@ -76,6 +88,7 @@ class App extends Component {
                     fetchData={this.state.fetchData}
                     handleInputName={this.handleInputName}
                     inputNameValue={this.state.filters.byName}
+                    handleInputHouses={this.handleInputHouses}
                   />
                 )
               }

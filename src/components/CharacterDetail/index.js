@@ -20,7 +20,7 @@ class CharacterDetail extends React.Component {
             <i className={`info info__icon fas ${character.alive ? 'fa-heart' : 'fa-skull'}`}></i>
           </div>
         </div>
-        <Link to="/">
+        <Link className="character-detail__back" to="/">
             Back
         </Link>
       </div>

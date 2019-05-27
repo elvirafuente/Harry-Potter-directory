@@ -45,3 +45,17 @@
         margin-right: 15px;
     }
 }
+
+.character-detail__back{
+    background-color: #e5f1f7;
+    text-decoration: none;
+    display: block;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: rgb(5, 62, 77);
+    &:hover{
+        color: #e5f1f7;
+        background-color: rgb(85, 156, 175);
+        font-weight: bold;
+    }
+}

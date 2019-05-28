@@ -16,12 +16,15 @@ class App extends Component {
         byName: '',
         houses: [],
         lifeStatus: '',
+        eyeColor: '',
       },
       isFetching: true,
     };
     this.handleInputName = this.handleInputName.bind(this);
     this.handleInputHouses = this.handleInputHouses.bind(this);
     this.handleInputLifeStatus = this.handleInputLifeStatus.bind(this);
+    this.handleInputEyeColor = this.handleInputEyeColor.bind(this);
+
   }
 
   componentDidMount() {
@@ -56,6 +59,18 @@ class App extends Component {
         filters: {
           ...prevState.filters,
           byName: value,
+        }
+      }
+    })
+  }
+
+  handleInputEyeColor(event){
+    const { value } = event.target
+    this.setState(prevState => {
+      return {
+        filters:{
+          ...prevState,
+          eyeColor: value
         }
       }
     })
@@ -112,6 +127,7 @@ class App extends Component {
                     inputHouses={this.state.filters.houses}
                     handleInputLifeStatus={this.handleInputLifeStatus}
                     inputLifeStatus={this.state.filters.lifeStatus}
+                    handleInputEyeColor={this.handleInputEyeColor}
                   />
                 )
               }

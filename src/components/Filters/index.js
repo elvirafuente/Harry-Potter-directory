@@ -37,6 +37,13 @@ class Filters extends Component {
               <label className="filter-chechbox">Death</label>
             </legend>
           </fieldset>
+          <fieldset className="filter__section">
+            <label htmlFor="input-eyeColor" className="filters__label">
+              Filter by eye color
+            </label>
+            <input type="text" className="filters__input" id="input-name" name="input-name" onChange={this.props.handleInputEyeColor} />
+            {/* value={this.props.inputNameValue}  */}
+          </fieldset>
         </form>
       </Fragment>
     )

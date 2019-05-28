@@ -22,7 +22,6 @@ class CharacterList extends Component {
               return true;
             }
           })
-            
           .map(item => {
           return (
             <li key={item.id} className="card__container">

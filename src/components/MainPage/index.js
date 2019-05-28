@@ -16,7 +16,7 @@ class MainPage extends React.Component {
             inputNameValue={this.props.inputNameValue}
             inputHouses={this.props.inputHouses}
             inputLifeStatus={this.props.inputLifeStatus}
-            handleInputEyeColor={this.props.handleInputEyeColor}
+
 
           />
         </nav>

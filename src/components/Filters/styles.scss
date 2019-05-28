@@ -5,9 +5,13 @@
     align-items: center;
     min-height: 110px;
     text-align: center;
+    border-bottom: 1px solid #afdeeb;
     @media all and (min-width:768px){
+        flex-direction: row;
         min-height: 150px;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+        padding: 25px;
+        align-items: flex-start;
     }
 }
 
@@ -20,14 +24,23 @@
 
 .filters__label {
     font-size: 20px;
-    margin: 5px;
+    margin: 25px 5px 5px;
     font-weight: 400;
 }
 
 .filter__section{
-    border:0;
+    @media all and (min-width:1200px){
+        border:0;
+    }
 }
 
 .filter-chechbox{
     margin: 5px 15px 30px 5px;
+}
+
+.label {
+    @media all and (min-width:1200px){
+        margin: 0;
+       
+    }
 }

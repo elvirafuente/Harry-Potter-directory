@@ -127,7 +127,6 @@ class App extends Component {
                     inputHouses={this.state.filters.houses}
                     handleInputLifeStatus={this.handleInputLifeStatus}
                     inputLifeStatus={this.state.filters.lifeStatus}
-                    handleInputEyeColor={this.handleInputEyeColor}
                   />
                 )
               }

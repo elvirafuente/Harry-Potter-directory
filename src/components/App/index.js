@@ -69,7 +69,7 @@ class App extends Component {
     this.setState(prevState => {
       return {
         filters:{
-          ...prevState,
+          ...prevState.filters,
           eyeColor: value
         }
       }

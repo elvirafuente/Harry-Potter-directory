@@ -5,13 +5,13 @@
     align-items: center;
     min-height: 110px;
     text-align: center;
-    border-bottom: 1px solid #afdeeb;
+    border-bottom: 2px solid #ebf5f8;
+    margin: 30px auto;
     @media all and (min-width:768px){
         flex-direction: row;
-        min-height: 150px;
-        margin-bottom: 25px;
-        padding: 25px;
+        min-height: 120px;
         align-items: flex-start;
+        
     }
 }
 
@@ -29,9 +29,8 @@
 }
 
 .filter__section{
-    @media all and (min-width:1200px){
         border:0;
-    }
+        margin-bottom: 15px;
 }
 
 .filter-chechbox{
@@ -39,8 +38,12 @@
 }
 
 .label {
-    @media all and (min-width:1200px){
+    @media all and (min-width:768px){
         margin: 0;
-       
+ 
     }
+}
+
+.inputs {
+    width: 220px;
 }

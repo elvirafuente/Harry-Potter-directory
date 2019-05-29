@@ -13,8 +13,8 @@ class Filters extends Component {
             </label>
             <input type="text" className="filters__input" id="input-name" name="input-name" value={this.props.inputNameValue} onChange={this.props.handleInputName} />
           </fieldset>
-          {/* <div className="second-section__filters"> */}
-            <fieldset className="filter__section">
+          <div className="second-section__filters">
+            <fieldset className="filter__section inputs">
               <legend>
                 <h3 className="filters__label label">Filter by house</h3>
               </legend>
@@ -39,7 +39,7 @@ class Filters extends Component {
               <input type="radio" value="Death" name="lifeStatus" checked={this.props.inputLifeStatus.includes('Death')} onChange={this.props.handleInputLifeStatus} />
               <label className="filter-chechbox">Death</label>
             </fieldset>
-          {/* </div> */}
+          </div>
         </form>
       </Fragment>
     )

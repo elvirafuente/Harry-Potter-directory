@@ -14,10 +14,17 @@ class App extends Component {
       fetchData: [],
       filters: {
         byName: '',
+        houses: [],
+        lifeStatus: '',
+        eyeColor: '',
       },
       isFetching: true,
     };
     this.handleInputName = this.handleInputName.bind(this);
+    this.handleInputHouses = this.handleInputHouses.bind(this);
+    this.handleInputLifeStatus = this.handleInputLifeStatus.bind(this);
+    this.handleInputEyeColor = this.handleInputEyeColor.bind(this);
+
   }
 
   componentDidMount() {
@@ -57,8 +64,48 @@ class App extends Component {
     })
   }
 
-  getCharacter(detailId){
-     return this.state.fetchData.find(item => item.id === parseInt(detailId))
+  handleInputEyeColor(event){
+    const { value } = event.target
+    this.setState(prevState => {
+      return {
+        filters:{
+          ...prevState.filters,
+          eyeColor: value
+        }
+      }
+    })
+  }
+
+  handleInputHouses(event) {
+    const { value, checked } = event.target;
+    console.log(checked)
+    this.setState(prevState => {
+      return {
+        filters: {
+          ...prevState.filters,
+
+          houses: checked
+            ? prevState.filters.houses.concat(value)
+            : prevState.filters.houses.filter(item => item !== value),
+        }
+      }
+    })
+  }
+
+  handleInputLifeStatus(event){
+    const { value } = event.target;
+    this.setState(prevState => {
+      return {
+        filters : {
+          ...prevState.filters,
+          lifeStatus: value,
+        }
+      }
+    })
+  }
+
+  getCharacter(detailId) {
+    return this.state.fetchData.find(item => item.id === parseInt(detailId))
   }
 
   render() {
@@ -76,6 +123,10 @@ class App extends Component {
                     fetchData={this.state.fetchData}
                     handleInputName={this.handleInputName}
                     inputNameValue={this.state.filters.byName}
+                    handleInputHouses={this.handleInputHouses}
+                    inputHouses={this.state.filters.houses}
+                    handleInputLifeStatus={this.handleInputLifeStatus}
+                    inputLifeStatus={this.state.filters.lifeStatus}
                   />
                 )
               }

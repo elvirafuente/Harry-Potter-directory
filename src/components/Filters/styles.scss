@@ -3,10 +3,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 110px;
+    min-height: 110px;
+    text-align: center;
+    border-bottom: 2px solid #ebf5f8;
+    margin: 30px auto;
     @media all and (min-width:768px){
-        height: 150px;
-
+        flex-direction: row;
+        min-height: 120px;
+        align-items: flex-start;
+        
     }
 }
 
@@ -19,5 +24,26 @@
 
 .filters__label {
     font-size: 20px;
-    margin: 5px;
+    margin: 25px 5px 5px;
+    font-weight: 400;
+}
+
+.filter__section{
+        border:0;
+        margin-bottom: 15px;
+}
+
+.filter-chechbox{
+    margin: 5px 15px 30px 5px;
+}
+
+.label {
+    @media all and (min-width:768px){
+        margin: 0;
+ 
+    }
+}
+
+.inputs {
+    width: 220px;
 }
